@@ -20,6 +20,9 @@ jobs:
       - name: Run install
         run: npm install
 
+      - name: Run tests
+        run: npm test
+
       - name: Show content
         run: ls -l
 
