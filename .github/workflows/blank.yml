@@ -22,3 +22,7 @@ jobs:
     steps:
       - name: "Hola mudno"
         run: echo 'hola mundo'
+      - name: "Date"
+        run: date
+      - name: "Dir"
+        run: ls -la
