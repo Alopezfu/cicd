@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD NodeJS
 
 on:
   push:
@@ -9,13 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout to repo
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v6.0.0
 
-      - name: "Hola mudno"
-        run: echo 'hola mundo'
-      - name: "Date"
-        run: date
-      - name: "Dir"
-        run: ls -la
+      - name: Import NodeJS
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Run install
+        run: npm install
+
+      - name: Show content
+        run: ls -l
+
