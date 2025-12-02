@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: ${{env.NODE_VERSION}}
 
-      - name: Show content
-        run: ls -l
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./app
+
+      - name: Build app
+        run: npm build
+        working-directory: ./app
 
