@@ -18,7 +18,7 @@ jobs:
       - name: Import NodeJS
         uses: actions/setup-node@v6
         with:
-          node-version: $NODE_VERSION
+          node-version: ${{env.NODE_VERSION}}
 
       - name: Show content
         run: ls -l
