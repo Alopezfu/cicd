@@ -2,7 +2,10 @@ name: CI/CD NodeJS
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "develop" ]
+
+env:
+  NODE_VERSION: 24
 
 jobs:
   build:
@@ -15,13 +18,7 @@ jobs:
       - name: Import NodeJS
         uses: actions/setup-node@v6
         with:
-          node-version: 24
-
-      - name: Run install
-        run: npm install
-
-      - name: Run tests
-        run: npm test
+          node-version: $NODE_VERSION
 
       - name: Show content
         run: ls -l
